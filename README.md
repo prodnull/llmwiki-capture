@@ -149,7 +149,7 @@ Your phone needs to reach the service. Two options:
 
 ## What if the service is down?
 
-The mobile shortcut's HTTP request fails. The recommended setup includes a fallback: if the POST fails, the URL is saved to a local note (Apple Notes on iOS, Google Keep on Android). Process the backlog when the service is back up.
+The mobile shortcut's HTTP request fails. On iOS, the recommended Shortcut setup includes a fallback that saves the URL to Apple Notes if the POST fails. On Android, HTTP Shortcuts supports retry-on-failure; see the [Android setup guide](docs/setup-android.md) for options.
 
 For always-on availability, deploy to a Raspberry Pi, NAS, or VPS using Docker.
 
