@@ -1,0 +1,12 @@
+services:
+  capture:
+    build: .
+    ports:
+      - "7199:7199"
+    user: "${UID}:${GID}"
+    environment:
+      - CAPTURE_TOKEN=${CAPTURE_TOKEN:?Set CAPTURE_TOKEN in .env or environment}
+      - WIKI_PATH=/wiki
+    volumes:
+      - ${WIKI_PATH:-~/wiki}:/wiki
+    restart: unless-stopped

@@ -1,0 +1,19 @@
+# llmwiki-capture configuration
+# Copy to config.yml and edit. Env vars override these values.
+
+# Bearer token for authentication. If omitted, one is generated on startup.
+# token: "your-secret-token-here"
+
+# Path to your llm-wiki root directory.
+wiki_path: ~/wiki
+
+# Target a specific topic wiki (optional). If set, inbox files go to
+# ~/wiki/topics/<wiki_name>/inbox/ instead of ~/wiki/inbox/.
+# wiki_name: cybersecurity
+
+# Server settings.
+port: 7199
+host: 0.0.0.0
+
+# Max requests per minute per client IP.
+rate_limit: 60

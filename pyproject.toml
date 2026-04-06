@@ -1,0 +1,46 @@
+[project]
+name = "llmwiki-capture"
+version = "0.1.0"
+description = "Minimal HTTP inbox for llm-wiki — capture URLs and notes from mobile share sheets"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.28",
+    "ruff>=0.11",
+    "mypy>=1.15",
+    "types-pyyaml>=6.0",
+]
+
+[project.scripts]
+llmwiki-capture = "capture.server:main"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "S", "B", "UP"]
+ignore = ["S104"]  # binding to 0.0.0.0 is intentional
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]  # assert is fine in tests
+
+[tool.mypy]
+strict = true
+python_version = "3.11"
+
+[tool.hatch.build.targets.wheel]
+packages = ["capture"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
