@@ -7,8 +7,8 @@
 # Path to your llm-wiki root directory.
 wiki_path: ~/wiki
 
-# Target a specific topic wiki (optional). If set, inbox files go to
-# ~/wiki/topics/<wiki_name>/inbox/ instead of ~/wiki/inbox/.
+# Target a specific wiki subdirectory (optional). If set, inbox files go to
+# ~/wiki/<wiki_name>/inbox/ instead of ~/wiki/inbox/.
 # wiki_name: cybersecurity
 
 # Server settings.

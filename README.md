@@ -40,6 +40,15 @@ On first run, a bearer token is generated and printed. Save it — you need it f
 
 Then set up your phone: **[iOS](docs/setup-ios.md)** or **[Android](docs/setup-android.md)**.
 
+### iOS share sheet in action
+
+<p align="center">
+  <img src="docs/images/share-sheet.png" alt="iOS share sheet showing Wiki Inbox action" width="300">
+  <img src="docs/images/shortcut-editor.png" alt="iOS Shortcut editor for Wiki Inbox" width="300">
+</p>
+
+Tap **Wiki Inbox** in the share sheet (left) and the two-step Shortcut sends it to your capture service (right).
+
 ## Configuration
 
 All settings can be provided via `config.yml`, environment variables, or both (env vars take precedence).
@@ -47,20 +56,20 @@ All settings can be provided via `config.yml`, environment variables, or both (e
 | Setting | Env var | Config key | Default | Description |
 |---------|---------|------------|---------|-------------|
 | Wiki path | `WIKI_PATH` | `wiki_path` | `~/wiki` | Root of your llm-wiki directory |
-| Topic wiki | `CAPTURE_WIKI_NAME` | `wiki_name` | _(none)_ | Target a specific topic wiki's inbox |
+| Wiki name | `CAPTURE_WIKI_NAME` | `wiki_name` | _(none)_ | Subdirectory under wiki path for inbox |
 | Token | `CAPTURE_TOKEN` | `token` | _(generated)_ | Bearer token for authentication |
 | Port | `CAPTURE_PORT` | `port` | `7199` | Listen port |
 | Host | `CAPTURE_HOST` | `host` | `0.0.0.0` | Listen address |
 | Rate limit | `CAPTURE_RATE_LIMIT` | `rate_limit` | `60` | Max requests per minute per client |
 
-**Example:** To capture into the `cybersecurity` topic wiki:
+**Example:** To capture into a `cybersecurity` wiki subdirectory:
 
 ```yaml
 wiki_path: ~/wiki
 wiki_name: cybersecurity
 ```
 
-This writes inbox files to `~/wiki/topics/cybersecurity/inbox/`.
+This writes inbox files to `~/wiki/cybersecurity/inbox/`.
 
 ## API
 
