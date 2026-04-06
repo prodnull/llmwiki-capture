@@ -23,7 +23,7 @@ def _resolve_wiki_inbox(wiki_path: str, wiki_name: str | None) -> Path:
     """Resolve the inbox path within an llm-wiki structure."""
     base = Path(wiki_path).expanduser()
     if wiki_name:
-        return base / "topics" / wiki_name / "inbox"
+        return base / wiki_name / "inbox"
     return base / "inbox"
 
 
